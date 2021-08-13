@@ -1,0 +1,63 @@
+#include <iostream>
+#include "conio.h"
+#include <math.h>
+
+using namespace std;
+
+int poder(int x, int y);
+int raiz(int x);
+int seno(int x);
+int log(int x);
+
+int main(){
+	int n1, n2, opc;
+	do{
+	cout<<"1.- Al poder"<<endl;
+	cout<<"2.- Raiz"<<endl;
+	cout<<"3.- Seno"<<endl;
+	cout<<"4.- Logaritmo"<<endl;
+	cout<<"0.- Salir"<<endl;
+	cout<<"Elegir una opcion: ";
+	cin>>opc;
+	if(opc==0)
+		cout<<"Fin";
+	else{
+		switch (opc){
+			case 1: cout<<"Ingrese un numero: "; cin>>n1;
+			cout<<"Ingrese el poder: "; cin>>n2;
+			cout<<"La respuesta es: "<< poder(n1, n2) <<endl; break;
+			case 2: cout<<"Ingrese un numero: "; cin>>n1;
+			cout<<"La respuesta es: "<< raiz(n1) <<endl; break;
+			case 3: cout<<"Ingrese un numero: "; cin>>n1;
+			cout<<"La respuesta es: "<< seno(n1) <<endl; break;
+			case 4: cout<<"Ingrese un numero: "; cin>>n1;
+			cout<<"La respuesta es: "<< log(n1) <<endl; break;
+		}
+	}
+}
+	while (opc !=0);
+	getch();
+	return 0;
+}
+
+int poder(int x, int y){
+	int r;
+	r= pow(x,y);
+	return r;
+}
+
+int raiz(int x){
+	int r;
+	r=sqrt(x);
+	return r;
+}
+int seno(int x){
+	int r;
+	r= sin(x);
+	return r;
+}
+int log(int x){
+	int r;
+	r= log10(x);
+	return r;
+}
