@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int encontrarMax(int x, int y);
+
+int main(){
+	int n1, n2;
+	
+	cout<<"Digite 2 numeros: ";
+	cin>>n1>>n2;
+	
+	cout<<"El numero mayor es: "<< encontrarMax(n1, n2);
+	getch();
+	return 0;
+}
+
+int encontrarMax(int x, int y){
+	if(x<y){
+		return y;
+	}
+	else
+	return x;
+}
