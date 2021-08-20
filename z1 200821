@@ -1,0 +1,48 @@
+//z1 200821.cpp
+
+#include <iostream>
+#include "conio.h"
+#include "Triangulo.h"
+
+using namespace std;
+
+int main(){
+	int base, altura;
+	double res;
+	Triangulo respuesta;
+	cout<<"Calcular el area de un triangulo"<<endl;
+	cout<<"Ingresar la base: ";
+	cin>>base;
+	cout<<"Ingresar la altura: ";
+	cin>>altura;
+	res=respuesta.areatriangulo(base, altura);
+	cout<<"El area del triangulo es: "<<res;
+}
+
+//Triangulo.h
+
+#ifndef TRIANGULO_H
+#define TRIANGULO_H
+class Triangulo
+{
+	private:
+		int base;
+		int altura;
+		int area;
+	public:
+		double areatriangulo(int a, int b);
+		Triangulo(void);
+	protected:
+};
+#endif
+
+//Triangulo.cpp
+
+#include "Triangulo.h"
+Triangulo::Triangulo(void){}
+double Triangulo::areatriangulo(int a,int b){
+	area=(a*b)/2;
+	return area;
+}
+
+
