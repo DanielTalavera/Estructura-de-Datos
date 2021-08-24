@@ -1,0 +1,18 @@
+#include <iostream>
+#include "conio.h"
+#include "vector.h"
+#define MAX 100
+
+using namespace std;
+
+int main(){
+	int vec[MAX], n;
+	cout<<"Ingrese el tamaño del vector: ";
+	cin>>n;
+	vector vector1;
+	vector1.cargarVector(vec,n);
+	vector1.mostrarVector(vec,n);
+	cout<<"La suma del vector es: "<<vector1.sumarVector(vec,n);
+	getch();
+	return 0;
+}
