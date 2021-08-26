@@ -1,0 +1,19 @@
+//8.	Dado un vector A de n números reales, obténgase la diferencia más grande entre dos elementos consecutivos de este vector.
+#include <iostream>
+#include "conio.h"
+#include "vec.h"
+#define MAX 100
+
+using namespace std;
+
+int main(){
+	int n;
+	int vect[MAX];
+	cout<<"Ingrese el tamaño del vector: ";
+	cin>>n;
+	vec vec1;
+	vec1.cargarVector(vect,n);
+	cout<<"La diferencia mas grande es de: "<<vec1.mostrardif(vect,n);
+	getch();
+	return 0;
+}
