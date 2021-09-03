@@ -1,0 +1,25 @@
+#include "StdAfx.h"
+#include "Rectangulo.h"
+
+
+Rectangulo::Rectangulo(void)
+{
+}
+Rectangulo::~Rectangulo(void){
+}
+void Rectangulo::set_base(float b){
+	base=b;
+}
+float Rectangulo::get_base(){
+	return base;
+}
+void Rectangulo::set_altura(float h){
+	altura=h;
+}
+float Rectangulo::get_altura(){
+	return altura;
+}
+float Rectangulo::calcularArea(){
+	area=base*altura;
+	return area;
+}
