@@ -1,0 +1,16 @@
+#pragma once
+ref class Rectangulo
+{
+private: 
+	float base;
+	float altura;
+	float area;
+public:
+	Rectangulo(void);
+	~Rectangulo(void);
+	void set_base(float b);
+	float get_base();
+	void set_altura(float h);
+	float get_altura();
+	float calcularArea();
+};
