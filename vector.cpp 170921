@@ -1,0 +1,97 @@
+#include "StdAfx.h"
+#include "vector.h"
+#include <iostream>
+#define MAX 10
+
+using namespace std;
+
+vector::vector(void)
+{
+	vec[MAX]=0;
+	tamaño=0;
+}
+vector::~vector(void){}
+
+int vector::Get_tamaño(){
+	return tamaño;
+}
+void vector::Set_tamaño(int tam){
+	tamaño=tam;
+}
+	int vector::Get_vector(int posicion){
+		return vec[posicion];
+	}
+	int vector::Set_vector(int posicion,int _elemento){
+		vec[posicion]=_elemento;
+	}
+	void vector::Incremento(){
+	tamaño++;}
+	void vector::Decrementar(){
+	tamaño--;}
+	bool vector::Vacio_vector(){
+		if(tamaño==0)
+			return true;
+		else
+			return false;
+	}
+	bool vector::Lleno_vector(){
+		if(tamaño==(MAX-1))
+			return true;
+		else
+			return false;
+	}
+	bool vector::Insertar(int _elemento, int posicion){
+		if((posicion<0)&&(posicion>tamaño))
+			return false;
+		else{
+			if(Lleno_vector()==true)
+			return false;
+			else{
+				int i=Get_tamaño;
+				while(i>posicion){
+				vec[i]=vec[i-1];
+				i--;
+				}
+				vec[posicion]=_elemento;
+				return true;
+			}
+		}
+	}
+	bool vector::Eliminar(int _elemento){
+		int	pos=0,i=0;
+		if(Vacio_vector()==true)
+		return false;
+		else{
+			if(Buscar(_elemento,pos)){
+				i=pos;
+				while(i<Get_tamaño()){
+					vec[i]=vec[i+1];
+					i++;
+				}
+				Decrementar();
+				return true;
+			}
+		}
+	}
+	bool vector::Buscar(int elem, int &posicion){
+	for(int i=0;i<tamaño;i++){
+		if (elem==vec[i])
+		{
+		posicion=i;
+		return true;
+		}
+	} 
+	return false;
+	}
+	void vector::ordenarVector(int vec[], int tam){
+	int aux;
+	for(int i=0; i<(n-1); i++){
+		for(int j=i; j<n; j++){
+			if(vec[i] > vec[j]){
+				aux = vec[i];
+				vec[i] = vec[j];
+				vec[j] = aux;
+			}
+		}
+	}
+	}
