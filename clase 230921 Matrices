@@ -1,0 +1,47 @@
+#include "stdafx.h"
+#include "matriz.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int n,m;
+	do{
+	cout<<"Numero de filas: ";
+	cin>>n;
+	}
+	while ((n>10) || (n<=0));
+	do{
+	cout<<"Numero de columnas: ";
+	cin>>m;
+	}
+	while ((m>10) || (m<=0));
+	cout<<"Matriz 1"<<endl;
+	matriz matriz1(n,m);
+	matriz matriz2(n,m);
+	matriz matriz3;
+	matriz1.cargar();
+	cout<<"Matriz 2"<<endl;
+	matriz2.cargar();
+	matriz3.sumarmatrices(matriz1,matriz2);
+	cout<<"Matriz 3"<<endl;
+	matriz3.mostrar();
+	cout<<endl;
+	if(matriz1.verifcuadrada())
+		matriz1.mostrarDiagonal();
+	else
+	cout<<" no es cuadrada";
+	cout<<endl;
+	//segunda matriz
+	if(matriz2.verifcuadrada())
+		matriz2.mostrarDiagonal();
+	else
+		cout<<"no es cuadrada";
+	cout<<endl;
+	cout<<"La suma de la diagonal de la matriz 1: "<<matriz1.sumarDiagonal()<<endl;
+	cout<<"La suma de la diagonal de la matriz 2: "<<matriz2.sumarDiagonal()<<endl;
+	cout<<"El numero de filas es: "<<matriz1.devolverfila();
+	getch();
+}
