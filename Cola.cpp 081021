@@ -1,0 +1,55 @@
+#include "StdAfx.h"
+#include "Cola.h"
+#include <iostream>
+
+using namespace std;
+
+Cola::Cola(){
+	ini=0; fin=0;
+}
+bool Cola::Encolar(int valor){
+	if(fin==MAX)
+		return true;
+	else{
+		info[fin]=valor;
+		fin++;
+		return false;
+	}
+}
+bool Cola::Desencolar(void){
+	if(ColaVacia())
+		return true;
+	else{
+		ini++;
+		return false;
+	}
+}
+bool Cola::PrimeraCola(int& valor){
+	if(ColaVacia())
+		return true;
+	else{
+		valor=info[ini];
+		return false;
+	}
+}	
+bool Cola::UltimaCola(int &valor){
+	if(!ColaVacia()){
+		valor=info[fin-1];
+		return true;
+	}
+	return false;
+}
+bool Cola::ColaVacia(){
+	bool aux;
+	if(ini==fin){
+	aux=true;
+	}
+	else
+	aux=false;
+	return aux;
+}
+void Cola::mostrar(){
+	for(int i= ini; i<fin; i++){
+		cout<<"["<<info[i]<<"]"<<endl;
+	}
+}
