@@ -1,0 +1,50 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Cola.h"
+
+using namespace std;
+
+int main()
+{
+	int opc, val;
+	Cola colita;
+	do{
+	cout<<"-----Menu-----"<<endl;
+	cout<<"1.-Encolar"<<endl;
+	cout<<"2.-Desencolar"<<endl;
+	cout<<"3.-Primero en cola"<<endl;
+	cout<<"4.-Ultimo en cola"<<endl;
+	cout<<"5.-Mostrar"<<endl;
+	cout<<"6.-Salir"<<endl;
+	cin>>opc;
+	switch(opc){
+		case 1: 
+			cout<<"Ingrese un valor: ";
+			cin>>val;
+			colita.Encolar(val);
+			break;
+		case 2:
+			colita.Desencolar();
+			cout<<"Desencolado"<<endl;
+			break;
+		case 3:
+			colita.PrimeraCola(val);
+			cout<<"["<<val<<"]"<<endl;
+			break;
+		case 4:
+			colita.UltimaCola(val);
+			cout<<"["<<val<<"]"<<endl;
+			break;
+		case 5:
+			colita.mostrar();
+			break;
+		default:
+			cout<<"Opcion no valida";
+			break;
+		}
+	}
+	while(opc!=6);
+	return 0;
+}
+
