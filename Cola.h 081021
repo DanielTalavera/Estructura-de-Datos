@@ -1,0 +1,16 @@
+#pragma once
+#define MAX 100
+class Cola
+{
+private:
+	int info[MAX];
+	int ini, fin;
+public:
+	Cola();
+	bool Encolar(int valor);
+	bool Desencolar(void);
+	bool PrimeraCola(int& valor);
+	bool UltimaCola(int& valor);
+	bool ColaVacia();
+	void mostrar();
+};
