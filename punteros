@@ -1,0 +1,24 @@
+// punteros.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include"iostream"
+#include"conio.h"
+/*punteros - Declaracion de punteros
+
+&n = La direcccion de n
+*n = La variable cuya direccion esta almacenada en n
+*/
+using namespace std;
+int main()
+{
+	int num,*dir_num;
+	num=20;
+	dir_num=&num;
+	cout<<"Numero : "<<*dir_num<<endl; ////con el * imprime el valor 20
+	cout<<"Direccion de mem : "<<dir_num<<endl;  ///Sin el * muestra la direccion el la RAM
+	
+	getch();
+	return 0;
+	
+}
