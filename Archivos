@@ -1,0 +1,35 @@
+#include "StdAfx.h"
+#include <iostream>
+#include <fstream>
+#include <conio.h>
+#include "ABMamigo.cpp"
+
+using namespace std;
+
+
+void main() {
+	int opc;
+	ABMamigo *amig = new ABMamigo("amigOO.dat");
+	do{
+	cout<<""<<endl;
+	cout<<"Menu"<<endl;
+	cout<<"1.- Adicionar Nuevo"<<endl;
+	cout<<"2.- Listar"<<endl;
+	cout<<"3.- Buscar Registro"<<endl;
+	cout<<"4.- Eliminar Registro"<<endl;
+	cout<<"5.- Modificar Registro"<<endl;
+	cout<<"0.- Salir"<<endl;
+	cin>>opc;
+	switch(opc){
+	case 1: amig->adicionarNuevo(); break;
+	case 2: amig->listar(); break;
+	case 3: amig->buscarReg(); break;
+	case 4: amig->eliminarReg(); break;
+	case 5: amig->modificarReg(); break;
+	case 0: cout<<"Salir"; break;
+	default: cout<<"Opcion invalida"<<endl; break;
+	}
+	}
+	while(opc!=0);
+	getch();
+}
